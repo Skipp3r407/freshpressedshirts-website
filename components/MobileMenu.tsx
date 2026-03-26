@@ -27,7 +27,8 @@ export function MobileMenu({ open, onClose, links }: Props) {
     <>
       <div
         className={cn(
-          "fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity motion-safe:duration-300 lg:hidden",
+          /* Above MobileStickyCTA (z-75) + ChatbotWidget (z-80); below GalleryLightbox (z-90) */
+          "fixed inset-0 z-[86] bg-black/60 backdrop-blur-sm transition-opacity motion-safe:duration-300 lg:hidden",
           open
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -42,8 +43,10 @@ export function MobileMenu({ open, onClose, links }: Props) {
         aria-modal="true"
         aria-label="Mobile navigation"
         className={cn(
-          "fixed inset-y-0 right-0 z-[70] flex h-full max-h-dvh w-[min(100%,20rem)] flex-col border-l border-white/[0.08] bg-card shadow-lift motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out lg:hidden",
-          open ? "translate-x-0" : "translate-x-full"
+          "fixed inset-y-0 right-0 z-[87] flex h-full max-h-dvh w-[min(100%,20rem)] flex-col border-l border-white/[0.08] bg-card shadow-lift motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out lg:hidden",
+          open
+            ? "translate-x-0 pointer-events-auto"
+            : "translate-x-full pointer-events-none"
         )}
       >
         <div className="flex shrink-0 items-center justify-between border-b border-white/[0.08] px-4 py-4">

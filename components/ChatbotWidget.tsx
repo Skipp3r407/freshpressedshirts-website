@@ -151,33 +151,6 @@ export function ChatbotWidget() {
 
   return (
     <div className="fixed bottom-[calc(4.75rem+env(safe-area-inset-bottom,0px))] right-4 z-[80] flex flex-col items-end gap-3 md:bottom-6">
-      {showScrollTop && (
-        <button
-          type="button"
-          onClick={scrollToTop}
-          className={cn(
-            "flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/[0.12] bg-card/95 text-white shadow-lift backdrop-blur-sm",
-            "motion-safe:transition-[transform,filter] motion-safe:duration-200 hover:bg-white/[0.08] motion-safe:active:scale-95"
-          )}
-          aria-label="Back to top"
-        >
-          <svg
-            className="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            aria-hidden
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 15l7-7 7 7"
-            />
-          </svg>
-        </button>
-      )}
-
       <div
         className={cn(
           "flex max-h-[min(36rem,76vh)] w-[min(100vw-1.5rem,22rem)] flex-col overflow-hidden rounded-2xl border border-white/[0.1] bg-card shadow-lift",
@@ -302,6 +275,33 @@ export function ChatbotWidget() {
           </div>
         </div>
       </div>
+
+      {showScrollTop && (
+        <button
+          type="button"
+          onClick={scrollToTop}
+          className={cn(
+            "flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/[0.12] bg-card/95 text-white shadow-lift backdrop-blur-sm",
+            "motion-safe:transition-[transform,filter] motion-safe:duration-200 hover:bg-white/[0.08] motion-safe:active:scale-95"
+          )}
+          aria-label="Back to top"
+        >
+          <svg
+            className="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            aria-hidden
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </button>
+      )}
 
       <button
         type="button"

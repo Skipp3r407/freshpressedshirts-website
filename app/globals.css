@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-background text-white antialiased;
+}
+
+/* Space for mobile sticky CTA — toggled by MobileStickyCTA (max-width: 767px) */
+@media (max-width: 767px) {
+  body.has-mobile-cta {
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Focus rings for keyboard users */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-accent-orange;
+}
+
+/* Quote form target — pulse after smooth scroll (see lib/quote-scroll.ts) */
+.quote-section--highlight {
+  @apply rounded-2xl;
+  outline: 2px solid rgba(249, 115, 22, 0.55);
+  outline-offset: 3px;
+  animation: quote-form-pulse 1.15s ease-out 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-section--highlight {
+    animation: none;
+    outline-color: rgba(249, 115, 22, 0.65);
+  }
+}
+
+@keyframes quote-form-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.22);
+  }
+}

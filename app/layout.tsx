@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { ChatbotWidget } from "@/components/ChatbotWidget";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { QuoteHashScroll } from "@/components/QuoteHashScroll";
+import { SiteBackground } from "@/components/SiteBackground";
 import { site } from "@/lib/site";
 
 const inter = Inter({
@@ -38,7 +39,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen font-sans">
+      <body className="relative min-h-screen font-sans">
+        <SiteBackground />
         <Navbar />
         <QuoteHashScroll />
         {children}

@@ -86,11 +86,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/[0.08] pt-8 text-center text-xs text-white/40 md:flex-row md:items-center md:justify-between md:text-left">
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/[0.08] pt-8 pr-16 text-center text-xs text-white/40 sm:pr-20 md:flex-row md:items-center md:justify-between md:text-left">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p>{site.credit}</p>
+          <p className="min-w-0">
+            <a
+              href={site.creditUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-white/50 underline decoration-white/25 underline-offset-2 transition-colors hover:text-white hover:decoration-white/60"
+            >
+              {site.credit}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -15,4 +15,5 @@ export const site = {
   },
   hours: "Mon–Fri: 9am–6pm · Sat: By appointment",
   credit: "Powered by Elevate Digital Studios",
+  creditUrl: "https://elevatedigitalstudios.net/",
 } as const;
